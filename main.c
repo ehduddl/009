@@ -5,7 +5,21 @@
 
 int main(int argc, char *argv[]) {
 	
-	char str[30] = "happy C programming";
-    printf("문자열\"%s\"의 길이 : %i", str, strlen(str));
-	 return 0;
+	char str[100];
+	FILE *fp = NULL;
+    fp = fopen("sample.txt", "w");
+	printf("input a word : ");
+	scanf("%s",str);
+	fprintf(fp, "%s\n",str);
+	
+	printf("input a word : ");
+	scanf("%s",str);
+	fprintf(fp, "%s\n",str);
+	
+	printf("input a word : ");
+	scanf("%s",str);
+	fprintf(fp, "%s\n",str);
+	
+	fclose(fp);
+	return 0;
 }
