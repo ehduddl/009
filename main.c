@@ -5,21 +5,16 @@
 
 int main(int argc, char *argv[]) {
 	
-	char str[100];
 	FILE *fp = NULL;
-    fp = fopen("sample.txt", "w");
-	printf("input a word : ");
-	scanf("%s",str);
-	fprintf(fp, "%s\n",str);
-	
-	printf("input a word : ");
-	scanf("%s",str);
-	fprintf(fp, "%s\n",str);
-	
-	printf("input a word : ");
-	scanf("%s",str);
-	fprintf(fp, "%s\n",str);
-	
+    char c;
+    fp=fopen("sample.txt", "r");
+    
+	if(fp==NULL)
+    printf("파일을 못열음\n");
+    
+	while ((c=fgetc(fp)) != EOF)
+    putchar(c);
 	fclose(fp);
+	
 	return 0;
 }
